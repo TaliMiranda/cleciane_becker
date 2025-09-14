@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soul Travel – Jornada de Transição Consciente</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+</head>
+<body class="soul-travel-page">
+  <header>
+    <div class="nav-container">
+      <a class="logo" href="index.html">
+        <img src="images/Logotipo.webp" alt="Logotipo Cleciane Becker">
+        <span>Cleciane Becker</span>
+      </a>
+      <nav>
+        <div class="nav-toggle" aria-label="Toggle navigation" role="button">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre&nbsp;Mim</a>
+          <a href="soul-luz.html">Soul&nbsp;Luz</a>
+          <a href="soul-travel.html">Soul&nbsp;Travel</a>
+          <a href="comunidade.html">Comunidade</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero: full‑width background image with overlay and twinkling stars -->
+  <section class="hero">
+    <!-- Use the constellation artwork as the hero background and darken slightly -->
+    <img class="hero-background" src="images/capa_soultravel.png" alt="Constelações douradas em céu noturno">
+    <div class="overlay"></div>
+    <!-- Twinkling stars overlay: absolute positioned spans inheriting .hero .star styles -->
+    <div class="stars">
+      <!-- Define several star spans with unique positions to simulate a sparkling sky -->
+      <span class="star" style="top: 20%; left: 15%; animation-delay: 0s;"></span>
+      <span class="star" style="top: 35%; left: 40%; animation-delay: 1.2s;"></span>
+      <span class="star" style="top: 55%; left: 25%; animation-delay: 2.4s;"></span>
+      <span class="star" style="top: 30%; left: 70%; animation-delay: 0.8s;"></span>
+      <span class="star" style="top: 60%; left: 80%; animation-delay: 1.6s;"></span>
+      <span class="star" style="top: 45%; left: 60%; animation-delay: 2.8s;"></span>
+      <span class="star" style="top: 15%; left: 85%; animation-delay: 1.0s;"></span>
+      <span class="star" style="top: 75%; left: 50%; animation-delay: 2.2s;"></span>
+    </div>
+    <div class="hero-content">
+      <h1>Soul&nbsp;Travel</h1>
+      <p>Orientação espiritual e preparação prática para a sua jornada de migração consciente.</p>
+      <!-- Removed hero button for a cleaner banner -->
+    </div>
+  </section>
+
+  <!-- Sobre Soul Travel -->
+  <section id="sobre-soul-travel">
+    <h2>O que é Soul Travel?</h2>
+    <div class="section-card">
+      <p class="text-block">Um guia sagrado para quem sente o chamado de mudar, se realocar ou viver fora — não apenas com o corpo, mas com a alma.</p>
+      <p class="text-block">O Soul Travel é a união entre orientação espiritual e preparação prática para transições geográficas.</p>
+      <p class="text-block">Nasceu da Rota da Imigração, um espaço criado para apoiar migrações conscientes.</p>
+      <br>
+      <h3>Combinamos:</h3>
+      <ul class="text-block" style="list-style: none; padding-left: 0; columns: 2; gap: 1rem;">
+        <li>✦&nbsp;Astrocartografia</li>
+        <li>✦&nbsp;Alinhamento energético</li>
+        <li>✦&nbsp;Contratos de alma</li>
+        <li>✦&nbsp;Preparação emocional e espiritual</li>
+      </ul>
+      <br>
+      <h3>Para te ajudar a:</h3>
+      <ul class="text-block" style="list-style: none; padding-left: 0;">
+        <li>✦&nbsp;Compreender o chamado profundo por trás do desejo de migrar</li>
+        <li>✦&nbsp;Escolher destinos alinhados com seu mapa natal</li>
+        <li>✦&nbsp;Lidar com os desafios emocionais, espirituais e energéticos da mudança</li>
+        <li>✦&nbsp;Iniciar um novo ciclo ancorado na ressonância da sua alma</li>
+      </ul>
+      <br>
+      <p class="text-block"><strong>Isso é mais que uma mudança — é uma iniciação planetária.</strong></p>
+      <p class="text-block">Sessões e pacotes estarão disponíveis em breve. Enquanto isso, você pode explorar a <em>Rota da Imigração</em> clicando no botão abaixo.</p>
+      <a href="https://www.rotadaimigracao.com" target="_blank" class="cta-link">
+        <button class="cta-button" type="button">Visitar Rota da Imigração</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact Modal (hidden by default) -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <h3>Diálogo sagrado</h3>
+    <p class="text-block">Conte-me um pouco sobre você e o que está buscando.</p>
+    <form data-form class="contact-form">
+      <input type="text" name="Nome" placeholder="Nome completo *" required>
+      <input type="email" name="Email" placeholder="Email *" required>
+      <input type="tel" name="Telefone" placeholder="WhatsApp" pattern="^[0-9()+\s-]*$">
+      <select name="Interesse" required>
+        <option value="">O que mais desperta seu interesse nesse momento? *</option>
+        <option value="soul-luz">Soul Luz – Programa de 6 meses</option>
+        <option value="soul-travel">Soul Travel – Guia sagrado</option>
+        <option value="comunidade">Comunidade – Assinatura mensal</option>
+        <option value="nao-sei">Ainda não sei, quero conversar</option>
+      </select>
+      <textarea name="Mensagem" rows="4" placeholder="Conte-me sobre seu momento atual e o que está buscando *" required></textarea>
+      <textarea name="Experiencia" rows="3" placeholder="Já teve experiências com astrologia, terapias energéticas ou desenvolvimento espiritual? (Opcional)"></textarea>
+
+      <textarea name="Mensagem" rows="3" placeholder="O que você gostaria de transformar ou alcançar através deste diálogo? (opcional, mas poderoso para clarear intenção)" required></textarea>
+      <button type="submit">Enviar mensagem</button>
+    </form>
+  </div>
+</div>
+
+
+  <!-- Footer with contact and social links -->
+  
+  <footer class="footer-contact">
+    <div class="footer-text">
+      <p>Se sentiu a ressonância, será uma alegria te ouvir.</p>
+      <p>
+        <img src="images/flor-azul.webp" alt="Comunidade">
+        <br>
+        <button id="open-dialogo" class="cta-button" type="button" aria-haspopup="dialog" aria-controls="modal-contato">
+          Vamos abrir um <strong>DIÁLOGO SAGRADO</strong>
+        </button>
+      </p>
+      <p style="margin-top:1rem;">
+        Fale diretamente comigo... 
+        <a href="https://wa.me/447494611588" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+          <i class="fab fa-whatsapp"></i> 
+        </a>
+      </p>
+    </div>
+    <p class="footer-copy">&copy; 2025 Cleciane Becker. Todos os direitos reservados.</p>
+  </footer>
+  
+
+  <script src="scripts.js"></script>
+</body>
+</html>

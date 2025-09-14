@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleciane Becker – Desperte a sua jornada</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a class="logo" href="index.html">
+        <img src="images/Logotipo.webp" alt="Logotipo">
+        <span>Cleciane Becker</span>
+      </a>
+      <nav>
+        <div class="nav-toggle" aria-label="Toggle navigation" role="button">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre&nbsp;Mim</a>
+          <a href="soul-luz.html">Soul&nbsp;Luz</a>
+          <a href="soul-travel.html">Soul&nbsp;Travel</a>
+          <a href="comunidade.html">Comunidade</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero with full‑width video background and overlay -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="images/hero_video.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Você é o Portal</h1>
+      <p>Espaço de presença, verdade e escuta profunda para guiar sua transição.</p>
+      
+  </section>
+
+  <!-- Minha Jornada (excerpt) -->
+  <section id="inicio">
+    <h2>Minha Jornada</h2>
+    <!-- Wrap the preview content in a translucent card to match the
+         aesthetic used on other pages. -->
+    <div class="section-card">
+      <div class="content-grid">
+        <div class="image-round">
+          <img src="images/perfil.webp" alt="Cleciane Becker">
+        </div>
+        <div class="text-block">
+          <p><strong>Sou Cleciane Becker — </strong>astróloga, terapeuta multidimensional e facilitadora de curas energéticas e vibracionais.</p> 
+          Cresci em um lar religioso, com muitos dogmas e regras e por muitos anos aquilo não fazia sentido para mim. Sentia que havia algo além… mas ainda não sabia o quê.</p>
+          <p><a href="sobre.html" class="cta-button" style="margin-top:1rem;">Saiba mais</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços cards -->
+  <section>
+    <h2>Serviços</h2>
+    <!-- Place the three service cards inside a translucent container
+         so they float above the gradient background. -->
+    <div class="section-card">
+    <div class="cards">
+      <!-- Soul Luz Card -->
+      <div class="card">
+        <img src="images/capa_Soul_Luz.webp" alt="Soul Luz">
+        <div class="card-content">
+          <h3>Soul Luz</h3>
+          <p class="price">Programa de 6&nbsp;meses</p>
+          <ul>
+            <li>6 sessões individuais</li>
+            <li>Encontros em grupo quinzenais</li>
+            <li>Ativações e harmonizações energéticas</li>
+          </ul>
+          <!-- Use a link styled as a button so it aligns consistently with
+               other plan actions. The anchor receives the same class
+               as the button for styling. -->
+          <a class="plan-button" href="soul-luz.html">Saiba mais</a>
+        </div>
+      </div>
+      <!-- Soul Travel Card -->
+      <div class="card">
+        <img src="images/capa_soultravel.png" alt="Soul Travel">
+        <div class="card-content">
+          <h3>Soul Travel</h3>
+          <p class="price">Guia sagrado</p>
+          <ul>
+            <li>Astrocartografia</li>
+            <li>Alinhamento energético</li>
+            <li>Contratos de alma</li>
+          </ul>
+          <a class="plan-button" href="soul-travel.html">Explorar</a>
+        </div>
+      </div>
+      <!-- Comunidade Card -->
+      <div class="card">
+        <img src="images/capa_comunidade.webp" alt="Comunidade">
+        <div class="card-content">
+          <h3>Comunidade</h3>
+          <p class="price">R$44/mês</p>
+          <ul>
+            <li>Meditações guiadas mensais</li>
+            <li>Mensagens vibracionais semanais</li>
+            <li>Suporte energético contínuo</li>
+          </ul>
+          <a class="plan-button" href="comunidade.html">Participar</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section id="depoimentos">
+    <h2>Depoimentos</h2>
+    <div class="cards">
+  
+      <div class="section-card testimonial-card">
+        <p class="text-block short-text">
+          “Muito obrigada por tudo!!! Fico muito feliz por ter tido essas consultas contigo...
+          <span class="dots">[...]</span>
+        </p>
+        <p class="text-block full-text">
+          Nada é à toa, não foi o acaso. A consulta de hoje em especial me ajudou demais pois eu estava passando por dias difíceis.
+          Deu-me confiança pra escutar o que estava no meu coração, mas que teimosamente eu estava ignorando. Mais uma vez muito obrigada!!!!
+          Bjs, um ótimo final de semana e logo logo vamos nos ver novamente”
+        </p>
+        <button class="toggle-testimonial" onclick="toggleTestimonial(this)">Expandir</button>
+        <p class="text-block" style="text-align:right;"><strong>— Ana, Brasil</strong></p>
+      </div>
+  
+      <div class="section-card testimonial-card">
+        <p class="text-block short-text">
+          “Ter você como minha terapeuta tem sido maravilhoso. Você vai muito além de um simples atendimento profissional...
+          <span class="dots">[...]</span>
+        </p>
+        <p class="text-block full-text">
+          Você se importa realmente; com precisão cirúrgica e sensibilidade vai exatamente aonde precisa ser trabalhado.
+          Terapia para mim nunca funcionou, pois eu não conseguia me abrir com um estranho, e pior, muitos profissionais não levam em consideração a nossa alma, apenas o físico e o mental.
+          Quando você incluiu os acompanhamentos terapêuticos eu finalmente senti que agora eu teria uma terapia que fosse eficiente e que me atenderia como eu precisava.
+          Eu só não imaginava que seria tão maravilhoso e profundo. O tanto de autoconhecimento e direcionamento prático que cada sessão traz é algo impressionante.
+          Obrigada por estar ao meu lado, de verdade, nessa jornada. Você tem magicamente me ajudado a conectar os pontos de quem eu sou e aonde estou!!!”
+        </p>
+        <button class="toggle-testimonial" onclick="toggleTestimonial(this)">Expandir</button>
+        <p class="text-block" style="text-align:right;"><strong>— Joana, Portugal</strong></p>
+      </div>
+  
+      <div class="section-card testimonial-card">
+        <p class="text-block short-text">
+          “Bom dia!!! Passando para agradecer por ontem, aliás por sempre. Como as nossas sessões tem sido maravilhosas...
+          <span class="dots">[...]</span>
+        </p>
+        <p class="text-block full-text">
+          Com uma troca genuína e boa demais. Feliz pela terapia, feliz pelo retiro, feliz pelo universo ter nos colocado juntas nessa jornada — e olha que já é o terceiro país que pisamos ao mesmo tempo!
+          Obrigada à Cle profissional e à Cle ser humano!”
+        </p>
+        <button class="toggle-testimonial" onclick="toggleTestimonial(this)">Expandir</button>
+        <p class="text-block" style="text-align:right;"><strong>— Luisa, UK</strong></p>
+      </div>
+  
+    </div>
+  </section>
+  
+
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <div class="section-card">
+      <h2>Pronta para atravessar seu próximo portal?</h2>
+      <br>
+      <p>Se chegou até aqui, talvez já esteja sentindo. O próximo portal já se abriu.</p>
+      <br>
+      <button class="cta-button" onclick="openModal()">Atravessar Portal</button>
+    </div>
+  </section>
+  
+
+ <!-- Contact Modal (hidden by default) -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <h3>Diálogo sagrado</h3>
+    <p class="text-block">Conte-me um pouco sobre você e o que está buscando.</p>
+    <form data-form class="contact-form">
+      <input type="text" name="Nome" placeholder="Nome completo *" required>
+      <input type="email" name="Email" placeholder="Email *" required>
+      <input type="tel" name="Telefone" placeholder="WhatsApp" pattern="^[0-9()+\s-]*$">
+      <select name="Interesse" required>
+        <option value="">O que mais desperta seu interesse nesse momento? *</option>
+        <option value="soul-luz">Soul Luz – Programa de 6 meses</option>
+        <option value="soul-travel">Soul Travel – Guia sagrado</option>
+        <option value="comunidade">Comunidade – Assinatura mensal</option>
+        <option value="nao-sei">Ainda não sei, quero conversar</option>
+      </select>
+      <textarea name="Mensagem" rows="4" placeholder="Conte-me sobre seu momento atual e o que está buscando *" required></textarea>
+      <textarea name="Experiencia" rows="3" placeholder="Já teve experiências com astrologia, terapias energéticas ou desenvolvimento espiritual? (Opcional)"></textarea>
+
+      <textarea name="Mensagem" rows="3" placeholder="O que você gostaria de transformar ou alcançar através deste diálogo? (opcional, mas poderoso para clarear intenção)" required></textarea>
+      <button type="submit">Enviar mensagem</button>
+    </form>
+  </div>
+</div>
+
+  <!-- Footer with contact and social links -->
+  <footer class="footer-contact">
+    <div class="footer-text">
+      <p>Se sentiu a ressonância, será uma alegria te ouvir.</p>
+      <p>
+        <img src="images/flor-azul.webp" alt="Comunidade">
+        <br>
+        <button id="open-dialogo" class="cta-button" type="button" aria-haspopup="dialog" aria-controls="modal-contato">
+          Vamos abrir um <strong>DIÁLOGO SAGRADO</strong>
+        </button>
+      </p>
+      <p style="margin-top:1rem;">
+        Fale diretamente comigo... 
+        <a href="https://wa.me/447494611588" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+          <i class="fab fa-whatsapp"></i> 
+        </a>
+      </p>
+    </div>
+    <p class="footer-copy">&copy; 2025 Cleciane Becker. Todos os direitos reservados.</p>
+  </footer>
+  
+  
+
+  <script src="scripts.js"></script>
+</body>
+</html>
