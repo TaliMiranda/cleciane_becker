@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comunidade – Campo de Apoio Vibracional</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+</head>
+<body class="comunidade-page">
+  <header>
+    <div class="nav-container">
+      <a class="logo" href="index.html">
+        <img src="images/Logotipo.webp" alt="Logotipo Cleciane Becker">
+        <span>Cleciane Becker</span>
+      </a>
+      <nav>
+        <div class="nav-toggle" aria-label="Toggle navigation" role="button">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre&nbsp;Mim</a>
+          <a href="soul-luz.html">Soul&nbsp;Luz</a>
+          <a href="soul-travel.html">Soul&nbsp;Travel</a>
+          <a href="soul-family.html">Soul&nbsp;Family</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero: full‑width background image with overlay -->
+  <section class="hero">
+    <img class="hero-background" src="images/capa_comunidade.webp" alt="Geometria sagrada">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Soul Family</h1>
+      <p>Um campo de apoio vibracional para sustentar sua jornada de despertar.</p>
+    </div>
+  </section>
+
+  <!-- Sobre Comunidade -->
+  <section id="sobre-comunidade">
+    <h2>O que é a Comunidade Soul Family?</h2>
+    <div class="section-card">
+      <p class="text-block">A Soul Family é um círculo de almas que escolheram caminhar juntas no despertar da consciência.<br>
+      Mais que conteúdos, é um campo vibracional onde você recebe orientação, práticas, trocas e suporte para atravessar seus processos com leveza e profundidade.
+      </p>
+    </div>
+  </section>
+
+  <!-- O que está incluso -->
+  <section class="incluso-section">
+    <h2>O que está incluso</h2>
+    <div class="section-card">
+      <ul class="text-block" style="list-style: none; padding-left: 0; margin: 0;">
+        <li>Meditação guiada mensal: ancoragem vibracional coletiva</li>
+        <li>Mensagens vibracionais semanais: reflexões, práticas rápidas e ativações para o seu dia a dia</li>
+        <li>Suporte energético contínuo: sustentação do campo, alinhamentos e proteção vibracional</li>
+        <li>Conteúdos quinzenais sobre astrologia, espiritualidade, terapias e expansão de consciência</li>
+        <li>Encontros ao vivo para práticas, ativações e partilhas</li>
+        <li>Planners e rituais para organização energética</li>
+        <li>Grupo exclusivo para trocas, apoio e pertencimento</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Nova seção "Ouça uma amostra" com embed do Spotify -->
+  <section class="spotify-sample">
+    <h2>Ouça uma amostra</h2>
+    <div class="section-card">
+      <p class="text-block">Sinta a vibração das meditações e mensagens que compartilho com a Soul Family.</p>
+      <div class="spotify-embed">
+        <iframe 
+          style="border-radius:12px" 
+          src="https://open.spotify.com/embed/playlist/6yUdmQn0MmpfdtXwtUCUFn?utm_source=generator&theme=0" 
+          width="100%" 
+          height="352" 
+          frameBorder="0" 
+          allowfullscreen="" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Para quem é -->
+  <section class="para-quem-section">
+    <h2>Para quem é?</h2>
+    <div class="section-card">
+      <ul class="text-block" style="list-style: none; padding-left: 0; margin: 0;">
+        <li>Para quem sente que está aqui para algo além do óbvio.</li>
+        <li>Para mulheres que buscam clareza, suporte e pertencimento no seu caminho espiritual.</li>
+        <li>Para quem deseja integrar espiritualidade com vida prática: autocuidado, família, carreira, mudanças, missão de alma.</li>
+        <li>Para quem valoriza profundidade com leveza, sem cobranças, no seu próprio ritmo.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Valor e inscrição -->
+  <section>
+    <h2>Valor simbólico</h2>
+    <div class="section-card">
+      <p class="text-block"><strong>R$44/mês</strong></p>
+      <p class="text-block">A participação é gratuita para quem já está inscrito no Soul Luz.</p>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <h3><strong>Entrar para a Comunidade</strong></h3>
+    <p class="text-block">Preencha o formulário abaixo para fazer parte deste campo vibracional.</p>
+    <form data-form class="contact-form">
+      <input type="text" name="Nome" placeholder="Seu nome" required>
+      <input type="email" name="Email" placeholder="Seu e‑mail" required>
+      <input type="tel" name="Telefone" placeholder="Seu telefone" required>
+      <textarea name="Mensagem" placeholder="Compartilhe suas intenções" required></textarea>
+      <button type="submit">Enviar e gerar link PayPal</button>
+    </form>
+  </section>
+
+  <!-- Contact Modal (hidden by default) -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <h3>Diálogo sagrado</h3>
+      <p class="text-block">Conte-me um pouco sobre você e o que está buscando.</p>
+      <form data-form class="contact-form">
+        <input type="text" name="Nome" placeholder="Nome completo *" required>
+        <input type="email" name="Email" placeholder="Email *" required>
+        <input type="tel" name="Telefone" placeholder="WhatsApp" pattern="^[0-9()+\s-]*$">
+        <select name="Interesse" required>
+          <option value="">O que mais desperta seu interesse nesse momento? *</option>
+          <option value="soul-luz">Soul Luz – Programa de 6 meses</option>
+          <option value="soul-travel">Soul Travel – Guia sagrado</option>
+          <option value="comunidade">Comunidade – Assinatura mensal</option>
+          <option value="nao-sei">Ainda não sei, quero conversar</option>
+        </select>
+        <textarea name="Mensagem" rows="4" placeholder="Conte-me sobre seu momento atual e o que está buscando *" required></textarea>
+        <textarea name="Experiencia" rows="3" placeholder="Já teve experiências com astrologia, terapias energéticas ou desenvolvimento espiritual? (Opcional)"></textarea>
+        <textarea name="Intencao" rows="3" placeholder="O que você gostaria de transformar ou alcançar através deste diálogo? (opcional, mas poderoso para clarear intenção)"></textarea>
+        <button type="submit">Enviar mensagem</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer with contact and social links -->
+  <footer class="footer-contact">
+    <div class="footer-text">
+      <p>Se sentiu a ressonância, será uma alegria te ouvir.</p>
+      <p>
+        <img src="images/flor-azul.webp" alt="Comunidade">
+        <br>
+        <button id="open-dialogo" class="cta-button" type="button" aria-haspopup="dialog" aria-controls="modal-contato">
+          Vamos abrir um <strong>DIÁLOGO SAGRADO</strong>
+        </button>
+      </p>
+      <p style="margin-top:1rem;">
+        Fale diretamente comigo... 
+        <a href="https://wa.me/447494611588" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+          <i class="fab fa-whatsapp"></i> 
+        </a>
+        <a href="https://www.instagram.com/clecianebecker/" target="_blank" rel="noopener" aria-label="Abrir Instagram">
+          <i class="fab fa-instagram"></i> 
+        </a>
+        <a href="https://open.spotify.com/playlist/6yUdmQn0MmpfdtXwtUCUFn?si=4nXwqyDRSG2hovJvJny5Tw&pi=igYfHe2DQzOq-" target="_blank" rel="noopener" aria-label="Abrir Spotify">
+          <i class="fab fa-spotify"></i> 
+        </a>
+      </p>
+    </div>
+    <p class="footer-copy">&copy; 2025 Cleciane Becker. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,1107 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+/*
+ * Custom font: Tan Mon Cheri
+ */
+@font-face {
+  font-family: "Tan Mon Cheri";
+  src: url("fonts/tan-mon-cheri.woff2") format("woff2"), url("fonts/tan-mon-cheri.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+ * Variáveis de cor
+ */
+:root {
+  --primary-dark: #211f39;
+  --secondary-dark: #433860;
+  --accent: #6d5a91;
+  --neutral: #77566d;
+  --accent-light: #ac8eb3;
+  --gold: #d2a46b;
+
+  --text-primary: #ffffff;
+  --text-secondary: #f8f6fa;
+  --text-muted: #e8e3f0;
+  --text-on-light: #211f39;
+  --text-gold: #d2a46b;
+
+  --bg-light: #f4f0f9;
+  --bg-card: rgba(255, 255, 255, 0.12);
+  --bg-card-strong: rgba(255, 255, 255, 0.95);
+
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-primary);
+
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark) 0%,
+    var(--secondary-dark) 30%,
+    var(--accent) 70%,
+    var(--accent-light) 100%
+  );
+  background-size: 300% 300%;
+  animation: gradientFlow 30s ease infinite;
+
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+/* ✅ Fundo de fundo etéreo específico por página */
+body.soul-travel-page::before,
+body.soul-luz-page::before,
+body.comunidade-page::before,
+body.sobre-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.soul-travel-page .section-card p {
+  line-height: 1.9;
+  letter-spacing: 0.2px; /* opcional, dá um ar mais etéreo */
+}
+
+body.comunidade-page .section-card p {
+  line-height: 1.9;
+  letter-spacing: 0.2px; /* opcional, dá um ar mais etéreo */
+}
+
+body.sobre-page::before {
+  background-image: url("images/portal-etereo.webp");
+}
+
+body.soul-travel-page::before {
+  background-image: url("images/constellations.png");
+}
+
+body.soul-luz-page::before {
+  background-image: url("images/soul-luz-background.webp");
+}
+
+body.comunidade-page::before {
+  background-image: url("images/comunidade_background.webp");
+}
+
+/* Consolidated hero image styles */
+.hero img.hero-background {
+  object-fit: cover;
+  object-position: center;
+  filter: drop-shadow(0 0 12px #d2a46b);
+  animation: glow 4s ease-in-out infinite;
+}
+
+body.soul-luz-page .hero img.hero-background {
+  object-position: 50% 20%; /* centralizado no X, puxando o foco para cima */
+}
+
+body.comunidade-page .hero img.hero-background {
+  object-position: center center;
+}
+
+body.soul-travel-page .hero img.hero-background {
+  filter: brightness(0.8);
+}
+
+body.soul-travel-page .hero {
+  min-height: 100vh;
+}
+
+.section-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 32px;
+  backdrop-filter: blur(8px);
+  padding: 3rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.section-card.high-contrast {
+  background: var(--bg-card-strong);
+  color: var(--text-on-light);
+}
+
+.final-portal {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+/* ✨ Frase final do Soul Travel centralizada com gradiente */
+body.soul-travel-page .final-claim {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+}
+
+body.soul-travel-page .final-claim strong {
+  display: inline-block;
+  background: linear-gradient(90deg, #c8a8e9, #f4d03f, #ffdce2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.final-portal strong {
+  display: inline-block;
+  background: linear-gradient(90deg, #c8a8e9, #f4d03f, #ffdce2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+/* Consolidated twinkling stars styles */
+#stars-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.twinkling-star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 12px #d2a46b);
+  }
+  50% {
+    filter: drop-shadow(0 0 28px #ffd27f);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+}
+
+a {
+  color: var(--text-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+header {
+  width: 100%;
+  background: var(--primary-dark);
+  color: var(--text-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo span {
+  font-family: "Tan Mon Cheri", "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-secondary);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(33, 31, 57, 0.98);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.open {
+    max-height: 500px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a {
+    padding: 1rem 0;
+    color: var(--text-primary);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-primary);
+}
+
+.hero img.hero-background,
+.hero video.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.75);
+}
+
+/* Overlay */
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Reduzindo opacidade do overlay para deixar o vídeo mais claro */
+  background: rgba(33, 31, 57, 0.25);
+  z-index: 1;
+}
+
+/* Escurecer no Soul Travel para legibilidade */
+body.soul-travel-page .hero .overlay {
+  background: rgba(33, 31, 57, 0.55);
+}
+
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Botões */
+.cta-button,
+.plan-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  background: var(--gold);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.cta-button:hover,
+.plan-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card .plan-button {
+  margin-top: auto;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  align-self: center;
+}
+
+section {
+  padding: 4rem 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  color: var(--text-primary);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Tan Mon Cheri", "Montserrat", sans-serif;
+  font-weight: normal;
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--gold);
+}
+
+#inicio.text-block {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.text-block p {
+  line-height: 1.8;
+  margin-bottom: 1.4em;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.image-round {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-round:hover {
+  box-shadow: 0 0 35px rgba(210, 164, 107, 0.8), 0 0 20px rgba(210, 164, 107, 0.6);
+  transform: translateY(-7px);
+}
+
+.image-round img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Listas padrão (bolinha dourada) */
+.text-block {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.text-block li {
+  list-style: none;
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 1.05rem;
+  color: white;
+}
+
+.text-block li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #f4d03f;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* --- CARDS --- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  flex: 1 1 280px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card p {
+  margin: 0.5rem 1rem 1rem 1rem;
+  text-align: center;
+  line-height: 1.6;
+  color: var(--text-on-light);
+}
+
+.card ul {
+  margin: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.card p,
+.card ul li {
+  color: var(--text-on-light);
+}
+
+.card h3 {
+  color: var(--primary-dark);
+}
+
+.card:hover {
+  box-shadow: 0 0 35px rgba(210, 164, 107, 0.8), 0 0 20px rgba(210, 164, 107, 0.6), 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-7px);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+  width: 100%;
+  text-align: center;
+}
+
+.card .price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  width: 100%;
+  text-align: center;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+}
+
+.card ul li {
+  margin-bottom: 0.6rem;
+  padding-left: 1.8rem;
+  position: relative;
+  color: var(--secondary-dark);
+  line-height: 1.5;
+}
+
+.card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0.4rem;
+  color: var(--gold);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Destaque card soul luz */
+.card.destaque {
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 25px rgba(210, 164, 107, 0.6);
+}
+
+.card .badge {
+  background: var(--gold);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 0 auto 10px auto;
+  text-align: center;
+}
+
+.badge-top {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card img[alt="Soul Luz"] {
+  object-position: 50% 20%;
+}
+
+.card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Depoimentos */
+#depoimentos .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem; /* 🔹 diminui o espaçamento vertical e horizontal */
+  justify-items: center;
+  align-items: stretch;
+  max-width: 900px; /* 🔹 aproxima as colunas entre si */
+  margin: 0 auto;
+}
+
+#depoimentos .section-card {
+  width: 100%;
+  padding: 2rem 1.5rem; /* 🔹 reduz a área interna para um layout mais compacto */
+}
+
+.full-text {
+  display: none;
+}
+.testimonial-card.expanded .full-text {
+  display: block;
+}
+.testimonial-card.expanded .dots {
+  display: none;
+}
+
+.toggle-testimonial {
+  background: none;
+  color: var(--text-gold);
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 4rem 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  font-family: "Tan Mon Cheri", "Montserrat", sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.cta-section p {
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Forms */
+.form-section {
+  background: linear-gradient(to right, var(--accent-light) 0%, var(--accent) 100%);
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  margin-top: 2rem;
+}
+
+.form-section h3,
+.modal-content h3 {
+  text-align: center;
+  font-family: "Tan Mon Cheri", "Montserrat", sans-serif;
+  color: var(--text-primary);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.form-subtitle {
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  color: #f2e7ff;
+  font-size: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(6px);
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  font-family: inherit;
+  resize: vertical;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: none;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+.contact-form button {
+  grid-column: 1 / -1;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  background: var(--gold);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(33, 31, 57, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  background: var(--bg-card);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: var(--text-primary);
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Footer */
+.footer-contact {
+  background-color: var(--primary-dark);
+  padding: 1rem 0.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-contact .footer-text p {
+  margin: 0.3rem 0;
+}
+
+.footer-contact img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+.footer-text p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: white;
+}
+
+/* Adicionando hover nos ícones sociais do rodapé */
+.footer-text a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  color: var(--gold);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-text a:hover {
+  transform: translateY(-3px);
+  color: #ffd27f;
+}
+
+.footer-links {
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copy {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Estilos para a seção social-proof */
+.social-proof {
+  padding: 2.5rem 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.social-proof h2 {
+  font-family: "Tan Mon Cheri", "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.social-proof .section-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 2.5rem 2rem;
+}
+
+.social-proof .text-block {
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.7;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.social-proof .spotify-embed {
+  max-width: 500px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-proof .spotify-embed iframe {
+  height: 152px;
+}
+
+.social-proof .cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+}
+
+/* Estilos para a seção spotify-sample na página Soul Family */
+.spotify-sample {
+  padding: 2.5rem 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.spotify-sample h2 {
+  font-family: "Tan Mon Cheri", "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.spotify-sample .section-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.spotify-sample .spotify-embed {
+  max-width: 500px;
+  margin: 1.5rem auto 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.spotify-sample .spotify-embed iframe {
+  height: 152px;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .content-grid {
+    gap: 1.5rem;
+  }
+  .cards {
+    gap: 1rem;
+  }
+  .card {
+    flex: 1 1 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  section {
+    padding: 3rem 1rem;
+  }
+  section h2 {
+    font-size: 1.8rem;
+  }
+  /* Mobile refinements para Soul Travel */
+  #sobre-soul-travel .section-card {
+    padding: 2rem 1rem;
+  }
+  #sobre-soul-travel ul {
+    padding-left: 1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .card {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 800px) {
+  #depoimentos .cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* === AJUSTES FINAIS ESPECÍFICOS DO SOUL TRAVEL === */
+
+/* 1) 🔹 Bullets dourados */
+#sobre-soul-travel ul.text-block li {
+  padding-left: 1.4rem;
+}
+#sobre-soul-travel ul.text-block li::before {
+  content: "🔹";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* 2) Assinatura final centralizada com gradiente */
+#sobre-soul-travel .final-claim {
+  text-align: center;
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+}
+#sobre-soul-travel .final-claim strong {
+  background: linear-gradient(90deg, #c8a8e9, #f4d03f, #ffdce2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+/* 3) Hierarquia dos subtítulos */
+#sobre-soul-travel h3 {
+  color: var(--text-gold);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Mim – Cleciane Becker</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+</head>
+<body class="sobre-page">
+  <header>
+    <div class="nav-container">
+      <a class="logo" href="index.html">
+        <img src="images/Logotipo.webp" alt="Logotipo Cleciane Becker">
+        <span>Cleciane Becker</span>
+      </a>
+      <nav>
+        <div class="nav-toggle" aria-label="Toggle navigation" role="button">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Início</a>
+          <a href="sobre.html" class="active">Sobre&nbsp;Mim</a>
+          <a href="soul-luz.html">Soul&nbsp;Luz</a>
+          <a href="soul-travel.html">Soul&nbsp;Travel</a>
+          <a href="soul-family.html">Soul&nbsp;Family</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img class="hero-background" src="images/arvore-da-vida.webp" alt="Árvore da Vida">
+    <div class="overlay"></div>
+
+    <!-- partículas -->
+    <div id="particles">
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+    </div>
+
+    <div class="hero-content">
+      <h1>Sobre&nbsp;Mim</h1>
+      <p>Conheça mais sobre a minha jornada e a essência que me trouxe até aqui.</p>
+    </div>
+  </section>
+
+  <!-- Biografia completa -->
+  <section class="sobre-etereo">
+    <h2>Quem é Cleciane Becker</h2>
+    <div class="section-card">
+  
+      <div class="text-block">
+        <p>Sou Cleciane Becker, astróloga, mentora, terapeuta multidimensional e guardiã de portais de consciência.</p>
+
+        <p>Desde cedo, percebia que havia algo além do que me ensinaram.  
+        A espiritualidade que buscava não nascia do medo, mas da presença.  
+        E com o tempo, fui descobrindo que a verdadeira conexão é simples:  
+        acontece no silêncio, na escuta sutil, no instante em que a alma se alinha.</p>
+
+        <p>Minha jornada foi feita de mudanças, descobertas e renascimentos.  
+        Em cada lugar onde vivi, encontrei novos espelhos de mim mesma.</p>
+
+        <p>No Paraguai, vivi minha infância sob a energia de Saturno — amadureci cedo  
+        e já fazia perguntas existenciais que me acompanhariam por toda a vida.  
+        Na Irlanda, encontrei meu companheiro de vida.  
+        No Brasil, recebi minha filha e com ela a lembrança de viver em alegria  
+        e da coragem de recomeçar.  
+        Em Portugal, atravessei ciclos de morte e renascimento, junto com o nascimento do meu segundo filho.</p>
+
+        <p>Foi com a chegada dos meus filhos que esse chamado se tornou mais forte.  
+        O desejo de ser uma mãe consciente abriu em mim portais de cura, meditação e presença.  
+        Meus dons psíquicos floresceram, e a sensibilidade que antes era silêncio tornou-se direção.</p>
+
+        <p>Na Escócia, aprendi a me escutar através da natureza e do silêncio.  
+        E hoje, na Inglaterra, sigo expandindo, guiando mulheres e facilitando grupos,  
+        levando essa sabedoria para o mundo.</p>
+
+        <p>Todos esses lugares e experiências me conduziram ao que faço hoje:  
+        guiar e mentorar mulheres, oferecendo os caminhos de expansão de consciência  
+        que um dia também busquei.</p>
+
+        <p>Cada etapa foi um portal, cada lugar um aprendizado.  
+        E assim sigo, permitindo que a alma me guie, enraizada em tudo,  
+        sem me prender a um único destino.</p>
+
+        <p>Minha missão é sustentar o espaço sagrado para quem desperta.  
+        Caminhar ao lado de quem atravessa portais internos, lembrando que as respostas já estão dentro.  
+        Não caminho à frente, mas ao seu lado, iluminando o portal que sua alma já escolheu atravessar.</p>
+
+        <p class="final-portal"><strong>Se você chegou até aqui, é porque sua alma reconheceu o chamado.<br>Você é o Portal.</strong></p>
+      </div>
+  </section>
+
+
+<!-- Contact Modal (hidden by default) -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <h3>Diálogo sagrado</h3>
+    <p class="text-block">Conte-me um pouco sobre você e o que está buscando.</p>
+    <form data-form class="contact-form">
+      <input type="text" name="Nome" placeholder="Nome completo *" required>
+      <input type="email" name="Email" placeholder="Email *" required>
+      <input type="tel" name="Telefone" placeholder="WhatsApp" pattern="^[0-9()+\s-]*$">
+      <select name="Interesse" required>
+        <option value="">O que mais desperta seu interesse nesse momento? *</option>
+        <option value="soul-luz">Soul Luz – Programa de 6 meses</option>
+        <option value="soul-travel">Soul Travel – Guia sagrado</option>
+        <option value="comunidade">Comunidade – Assinatura mensal</option>
+        <option value="nao-sei">Ainda não sei, quero conversar</option>
+      </select>
+      <textarea name="Mensagem" rows="4" placeholder="Conte-me sobre seu momento atual e o que está buscando *" required></textarea>
+      <textarea name="Experiencia" rows="3" placeholder="Já teve experiências com astrologia, terapias energéticas ou desenvolvimento espiritual? (Opcional)"></textarea>
+
+      <textarea name="Intencao" rows="3" placeholder="O que você gostaria de transformar ou alcançar através deste diálogo? (opcional, mas poderoso para clarear intenção)"></textarea>
+      <button type="submit">Enviar mensagem</button>
+    </form>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer class="footer-contact">
+    <div class="footer-text">
+      <p>Se sentiu a ressonância, será uma alegria te ouvir.</p>
+      <p>
+        <img src="images/flor-azul.webp" alt="Comunidade">
+        <br>
+        <button id="open-dialogo" class="cta-button" type="button" aria-haspopup="dialog" aria-controls="contactModal">
+          Vamos abrir um <strong>DIÁLOGO SAGRADO</strong>
+        </button>
+      </p>
+      <p style="margin-top:1rem;">
+        Fale diretamente comigo... 
+        <a href="https://wa.me/447494611588" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+          <i class="fab fa-whatsapp"></i> 
+        </a>
+        <a href="https://www.instagram.com/clecianebecker/" target="_blank" rel="noopener" aria-label="Abrir Instagram">
+          <i class="fab fa-instagram"></i> 
+        </a>
+        <a href="https://open.spotify.com/playlist/6yUdmQn0MmpfdtXwtUCUFn?si=4nXwqyDRSG2hovJvJny5Tw&pi=igYfHe2DQzOq-" target="_blank" rel="noopener" aria-label="Abrir Spotify">
+          <i class="fab fa-spotify"></i> 
+        </a>
+      </p>
+    </div>
+    <p class="footer-copy">&copy; 2025 Cleciane Becker. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
