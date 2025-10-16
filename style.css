@@ -1,8 +1,9 @@
+/* ============================================
+   IMPORTS E FONTES
+   ============================================ */
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
-/*
- * Custom font: Tan Mon Cheri
- */
 @font-face {
   font-family: "Tan Mon Cheri";
   src: url("fonts/tan-mon-cheri.woff2") format("woff2"), url("fonts/tan-mon-cheri.woff") format("woff");
@@ -11,10 +12,12 @@
   font-display: swap;
 }
 
-/*
- * Variáveis de cor
- */
+/* ============================================
+   VARIÁVEIS CSS
+   ============================================ */
+
 :root {
+  /* Cores principais */
   --primary-dark: #211f39;
   --secondary-dark: #433860;
   --accent: #6d5a91;
@@ -22,18 +25,25 @@
   --accent-light: #ac8eb3;
   --gold: #d2a46b;
 
+  /* Cores de texto */
   --text-primary: #ffffff;
   --text-secondary: #f8f6fa;
   --text-muted: #e8e3f0;
   --text-on-light: #211f39;
   --text-gold: #d2a46b;
 
+  /* Backgrounds */
   --bg-light: #f4f0f9;
   --bg-card: rgba(255, 255, 255, 0.12);
   --bg-card-strong: rgba(255, 255, 255, 0.95);
 
+  /* Layout */
   --max-width: 1200px;
 }
+
+/* ============================================
+   RESET E BASE
+   ============================================ */
 
 * {
   box-sizing: border-box;
@@ -45,7 +55,6 @@ body {
   padding: 0;
   font-family: "Montserrat", sans-serif;
   color: var(--text-primary);
-
   background: linear-gradient(
     135deg,
     var(--primary-dark) 0%,
@@ -55,145 +64,59 @@ body {
   );
   background-size: 300% 300%;
   animation: gradientFlow 30s ease infinite;
-
   position: relative;
   scroll-behavior: smooth;
 }
 
-/* ✅ Fundo de fundo etéreo específico por página */
-body.soul-travel-page::before,
-body.soul-luz-page::before,
-body.comunidade-page::before,
-body.sobre-page::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  opacity: 0.35;
-  pointer-events: none;
-  z-index: 0;
+h1,
+h2,
+h3 {
+  font-family: "Tan Mon Cheri", "Montserrat", sans-serif;
+  font-weight: normal;
 }
 
-body.soul-travel-page .section-card p {
-  line-height: 1.9;
-  letter-spacing: 0.2px; /* opcional, dá um ar mais etéreo */
+/* Tipografia fluida */
+h1 {
+  font-size: clamp(2rem, 1.6rem + 2.2vw, 3.2rem);
+}
+h2 {
+  font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem);
+}
+h3 {
+  font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.6rem);
+}
+p,
+li,
+input,
+textarea,
+select {
+  font-size: clamp(0.98rem, 0.92rem + 0.3vw, 1.05rem);
 }
 
-body.comunidade-page .section-card p {
-  line-height: 1.9;
-  letter-spacing: 0.2px; /* opcional, dá um ar mais etéreo */
+a {
+  color: var(--text-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-body.sobre-page::before {
-  background-image: url("images/portal-etereo.webp");
+a:hover {
+  color: var(--gold);
 }
 
-body.soul-travel-page::before {
-  background-image: url("images/constellations.png");
-}
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
 
-body.soul-luz-page::before {
-  background-image: url("images/soul-luz-background.webp");
-}
-
-body.comunidade-page::before {
-  background-image: url("images/comunidade_background.webp");
-}
-
-/* Consolidated hero image styles */
-.hero img.hero-background {
-  object-fit: cover;
-  object-position: center;
-  filter: drop-shadow(0 0 12px #d2a46b);
-  animation: glow 4s ease-in-out infinite;
-}
-
-body.soul-luz-page .hero img.hero-background {
-  object-position: 50% 20%; /* centralizado no X, puxando o foco para cima */
-}
-
-body.comunidade-page .hero img.hero-background {
-  object-position: center center;
-}
-
-body.soul-travel-page .hero img.hero-background {
-  filter: brightness(0.8);
-}
-
-body.soul-travel-page .hero {
-  min-height: 100vh;
-}
-
-.section-card {
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 32px;
-  backdrop-filter: blur(8px);
-  padding: 3rem 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-}
-
-.section-card.high-contrast {
-  background: var(--bg-card-strong);
-  color: var(--text-on-light);
-}
-
-.final-portal {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-/* ✨ Frase final do Soul Travel centralizada com gradiente */
-body.soul-travel-page .final-claim {
-  text-align: center;
-  margin-top: 1.5rem;
-  font-size: 1.3rem;
-  line-height: 1.6;
-  font-style: italic;
-  letter-spacing: 0.5px;
-  color: var(--text-secondary);
-}
-
-body.soul-travel-page .final-claim strong {
-  display: inline-block;
-  background: linear-gradient(90deg, #c8a8e9, #f4d03f, #ffdce2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 600;
-}
-
-.final-portal strong {
-  display: inline-block;
-  background: linear-gradient(90deg, #c8a8e9, #f4d03f, #ffdce2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 600;
-}
-
-/* Consolidated twinkling stars styles */
-#stars-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.twinkling-star {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  opacity: 0;
-  animation: twinkle 2s ease-in-out infinite;
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes glow {
@@ -221,15 +144,57 @@ body.soul-travel-page .final-claim strong {
   }
 }
 
-a {
-  color: var(--text-gold);
-  text-decoration: none;
-  transition: color 0.2s ease;
+/* ============================================
+   BACKGROUNDS ESPECÍFICOS POR PÁGINA
+   ============================================ */
+
+body.soul-travel-page::before,
+body.soul-luz-page::before,
+body.comunidade-page::before,
+body.sobre-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
 }
 
-a:hover {
-  color: var(--gold);
+body.sobre-page::before {
+  background-image: url("images/portal-etereo.webp");
 }
+
+body.soul-travel-page::before {
+  background-image: url("images/constellations.png");
+}
+
+body.soul-luz-page::before {
+  background-image: url("images/soul-luz-background.webp");
+}
+
+body.comunidade-page::before {
+  background-image: url("images/comunidade_background.webp");
+}
+
+/* iOS fix: evita "tremor" do background fixo no mobile */
+@supports (-webkit-touch-callout: none) {
+  body.soul-travel-page::before,
+  body.soul-luz-page::before,
+  body.comunidade-page::before,
+  body.sobre-page::before {
+    background-attachment: scroll;
+  }
+}
+
+/* ============================================
+   HEADER E NAVEGAÇÃO
+   ============================================ */
 
 header {
   width: 100%;
@@ -310,34 +275,9 @@ header {
   transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(33, 31, 57, 0.98);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .nav-links.open {
-    max-height: 500px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .nav-links a {
-    padding: 1rem 0;
-    color: var(--text-primary);
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-}
+/* ============================================
+   HERO
+   ============================================ */
 
 .hero {
   position: relative;
@@ -366,19 +306,38 @@ header {
   filter: brightness(0.75);
 }
 
-/* Overlay */
+.hero img.hero-background {
+  object-position: center;
+  filter: drop-shadow(0 0 12px #d2a46b);
+  animation: glow 4s ease-in-out infinite;
+}
+
+body.soul-luz-page .hero img.hero-background {
+  object-position: 50% 20%;
+}
+
+body.comunidade-page .hero img.hero-background {
+  object-position: center center;
+}
+
+body.soul-travel-page .hero img.hero-background {
+  filter: brightness(0.8);
+}
+
+body.soul-travel-page .hero {
+  min-height: 100vh;
+}
+
 .hero .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* Reduzindo opacidade do overlay para deixar o vídeo mais claro */
   background: rgba(33, 31, 57, 0.25);
   z-index: 1;
 }
 
-/* Escurecer no Soul Travel para legibilidade */
 body.soul-travel-page .hero .overlay {
   background: rgba(33, 31, 57, 0.55);
 }
@@ -405,37 +364,9 @@ body.soul-travel-page .hero .overlay {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Botões */
-.cta-button,
-.plan-button {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 30px;
-  background: var(--gold);
-  color: white;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-align: center;
-  text-decoration: none;
-}
-
-.cta-button:hover,
-.plan-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.card .plan-button {
-  margin-top: auto;
-  margin-bottom: 1rem;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.95rem;
-  align-self: center;
-}
+/* ============================================
+   SEÇÕES E CARDS
+   ============================================ */
 
 section {
   padding: 4rem 1rem;
@@ -453,13 +384,6 @@ section h2 {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Tan Mon Cheri", "Montserrat", sans-serif;
-  font-weight: normal;
-}
-
 section h2::after {
   content: "";
   position: absolute;
@@ -470,10 +394,22 @@ section h2::after {
   background: var(--gold);
 }
 
-#inicio.text-block {
-  max-width: 500px;
-  margin: 0 auto;
-  line-height: 1.8;
+.section-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 32px;
+  backdrop-filter: blur(8px);
+  padding: 3rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.section-card.high-contrast {
+  background: var(--bg-card-strong);
+  color: var(--text-on-light);
+}
+
+.text-block {
+  list-style: none;
+  padding-left: 1.5rem;
 }
 
 .text-block p {
@@ -481,17 +417,52 @@ section h2::after {
   margin-bottom: 1.4em;
 }
 
+.text-block li {
+  list-style: none;
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 1.05rem;
+  color: white;
+}
+
+.text-block li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #f4d03f;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Adicionando estilo para bullet-list com bullets dourados */
+.bullet-list {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.bullet-list li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 1.05rem;
+  color: white;
+}
+
+.bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
 .content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
-}
-
-@media (max-width: 900px) {
-  .content-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .image-round {
@@ -514,31 +485,7 @@ section h2::after {
   display: block;
 }
 
-/* Listas padrão (bolinha dourada) */
-.text-block {
-  list-style: none;
-  padding-left: 1.5rem;
-}
-
-.text-block li {
-  list-style: none;
-  margin-bottom: 0.8rem;
-  position: relative;
-  padding-left: 1.2rem;
-  font-size: 1.05rem;
-  color: white;
-}
-
-.text-block li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #f4d03f;
-  font-size: 1.2rem;
-  line-height: 1;
-}
-
-/* --- CARDS --- */
+/* Cards de serviços */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -563,29 +510,29 @@ section h2::after {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card p {
-  margin: 0.5rem 1rem 1rem 1rem;
-  text-align: center;
-  line-height: 1.6;
-  color: var(--text-on-light);
-}
-
-.card ul {
-  margin: 0 1.5rem 1.5rem 1.5rem;
-}
-
-.card p,
-.card ul li {
-  color: var(--text-on-light);
-}
-
-.card h3 {
-  color: var(--primary-dark);
-}
-
 .card:hover {
   box-shadow: 0 0 35px rgba(210, 164, 107, 0.8), 0 0 20px rgba(210, 164, 107, 0.6), 0 8px 20px rgba(0, 0, 0, 0.2);
   transform: translateY(-7px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card img[alt="Soul Luz"] {
+  object-position: 50% 20%;
+}
+
+.card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .card h3 {
@@ -606,10 +553,17 @@ section h2::after {
   text-align: center;
 }
 
+.card p {
+  margin: 0.5rem 1rem 1rem 1rem;
+  text-align: center;
+  line-height: 1.6;
+  color: var(--text-on-light);
+}
+
 .card ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.5rem 0;
+  margin: 0 1.5rem 1.5rem 1.5rem;
   text-align: left;
 }
 
@@ -630,7 +584,6 @@ section h2::after {
   line-height: 1;
 }
 
-/* Destaque card soul luz */
 .card.destaque {
   border: 3px solid var(--gold);
   box-shadow: 0 0 25px rgba(210, 164, 107, 0.6);
@@ -662,48 +615,71 @@ section h2::after {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+/* ============================================
+   BOTÕES
+   ============================================ */
+
+.cta-button,
+.plan-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  background: var(--gold);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  text-decoration: none;
 }
 
-.card img[alt="Soul Luz"] {
-  object-position: 50% 20%;
+/* Garantindo que o texto permaneça branco e visível no hover */
+.cta-button:hover,
+.plan-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  color: white;
+  background: var(--gold);
 }
 
-.card-content {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+.card .plan-button {
+  margin-top: auto;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  align-self: center;
 }
 
-/* Depoimentos */
+/* ============================================
+   DEPOIMENTOS
+   ============================================ */
+
 #depoimentos .cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem; /* 🔹 diminui o espaçamento vertical e horizontal */
+  gap: 1.2rem;
   justify-items: center;
   align-items: stretch;
-  max-width: 900px; /* 🔹 aproxima as colunas entre si */
+  max-width: 900px;
   margin: 0 auto;
 }
 
 #depoimentos .section-card {
   width: 100%;
-  padding: 2rem 1.5rem; /* 🔹 reduz a área interna para um layout mais compacto */
+  padding: 2rem 1.5rem;
 }
 
 .full-text {
   display: none;
 }
+
 .testimonial-card.expanded .full-text {
   display: block;
 }
+
 .testimonial-card.expanded .dots {
   display: none;
 }
@@ -716,6 +692,10 @@ section h2::after {
   cursor: pointer;
   padding: 0.5rem 0;
 }
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
 
 .cta-section {
   text-align: center;
@@ -739,7 +719,10 @@ section h2::after {
   color: var(--text-secondary);
 }
 
-/* Forms */
+/* ============================================
+   FORMULÁRIOS E MODAL
+   ============================================ */
+
 .form-section {
   background: linear-gradient(to right, var(--accent-light) 0%, var(--accent) 100%);
   padding: 3rem 1rem;
@@ -833,6 +816,7 @@ section h2::after {
 
 .modal.open {
   display: flex;
+  padding: 0.75rem;
 }
 
 .modal-content {
@@ -842,10 +826,33 @@ section h2::after {
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 2rem;
   border-radius: 16px;
-  max-width: 600px;
-  width: 90%;
+  max-width: 700px;
+  width: 130%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   color: var(--text-primary);
+}
+
+#contactModal .modal-content {
+  max-width: 520px;
+  width: 88%;
+  padding: 1.5rem;
+}
+
+#contactModal .contact-form {
+  gap: 0.8rem;
+  padding: 1.25rem;
+}
+
+#contactModal .contact-form input,
+#contactModal .contact-form textarea,
+#contactModal .contact-form select {
+  padding: 0.6rem;
+  font-size: 0.98rem;
+}
+
+#contactModal .contact-form button {
+  padding: 0.7rem 1.2rem;
+  font-size: 0.98rem;
 }
 
 .close-modal {
@@ -857,19 +864,10 @@ section h2::after {
   cursor: pointer;
 }
 
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+/* ============================================
+   FOOTER
+   ============================================ */
 
-/* Footer */
 .footer-contact {
   background-color: var(--primary-dark);
   padding: 1rem 0.5rem;
@@ -896,7 +894,6 @@ section h2::after {
   color: white;
 }
 
-/* Adicionando hover nos ícones sociais do rodapé */
 .footer-text a {
   display: inline-block;
   margin: 0 0.5rem;
@@ -930,7 +927,10 @@ section h2::after {
   color: var(--text-muted);
 }
 
-/* Estilos para a seção social-proof */
+/* ============================================
+   SOCIAL PROOF E SPOTIFY
+   ============================================ */
+
 .social-proof {
   padding: 2.5rem 1rem;
   max-width: 700px;
@@ -982,7 +982,6 @@ section h2::after {
   font-size: 1rem;
 }
 
-/* Estilos para a seção spotify-sample na página Soul Family */
 .spotify-sample {
   padding: 2.5rem 1rem;
   max-width: 700px;
@@ -1017,59 +1016,62 @@ section h2::after {
   height: 152px;
 }
 
-@media (max-width: 1024px) and (min-width: 769px) {
-  .content-grid {
-    gap: 1.5rem;
-  }
-  .cards {
-    gap: 1rem;
-  }
-  .card {
-    flex: 1 1 250px;
-  }
+/* ============================================
+   ESTRELAS CINTILANTES (SOUL TRAVEL)
+   ============================================ */
+
+#stars-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
 }
 
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  section {
-    padding: 3rem 1rem;
-  }
-  section h2 {
-    font-size: 1.8rem;
-  }
-  /* Mobile refinements para Soul Travel */
-  #sobre-soul-travel .section-card {
-    padding: 2rem 1rem;
-  }
-  #sobre-soul-travel ul {
-    padding-left: 1rem;
-  }
+.twinkling-star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0;
+  animation: twinkle 2s ease-in-out infinite;
 }
 
-@media (min-width: 900px) {
-  .card {
-    min-height: 520px;
-  }
+/* ============================================
+   PÁGINAS ESPECÍFICAS
+   ============================================ */
+
+/* Soul Travel */
+body.soul-travel-page .section-card p {
+  line-height: 1.9;
+  letter-spacing: 0.2px;
 }
 
-@media (max-width: 800px) {
-  #depoimentos .cards {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+body.soul-travel-page .final-claim {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
 }
 
-/* === AJUSTES FINAIS ESPECÍFICOS DO SOUL TRAVEL === */
+body.soul-travel-page .final-claim strong {
+  display: inline-block;
+  background: linear-gradient(90deg, #c8a8e9, #f4d03f, #ffdce2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
 
-/* 1) 🔹 Bullets dourados */
 #sobre-soul-travel ul.text-block li {
   padding-left: 1.4rem;
 }
+
 #sobre-soul-travel ul.text-block li::before {
   content: "🔹";
   position: absolute;
@@ -1079,24 +1081,6 @@ section h2::after {
   line-height: 1;
 }
 
-/* 2) Assinatura final centralizada com gradiente */
-#sobre-soul-travel .final-claim {
-  text-align: center;
-  font-style: italic;
-  font-weight: 500;
-  margin-top: 2rem;
-  font-size: 1.25rem;
-  letter-spacing: 0.5px;
-  color: var(--text-secondary);
-}
-#sobre-soul-travel .final-claim strong {
-  background: linear-gradient(90deg, #c8a8e9, #f4d03f, #ffdce2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 600;
-}
-
-/* 3) Hierarquia dos subtítulos */
 #sobre-soul-travel h3 {
   color: var(--text-gold);
   margin-top: 2.5rem;
@@ -1104,4 +1088,276 @@ section h2::after {
   font-size: 1.3rem;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+}
+
+#investimento .section-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.8rem;
+}
+
+#investimento .section-card p {
+  max-width: 680px;
+  margin: 0.25rem 0;
+  line-height: 1.7;
+}
+
+#investimento .text-block strong {
+  font-size: 1.9rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+#investimento .final-claim {
+  margin-top: 0.5rem;
+}
+
+/* Comunidade */
+body.comunidade-page .section-card p {
+  line-height: 1.9;
+  letter-spacing: 0.2px;
+}
+
+/* Sobre */
+.final-portal {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.final-portal strong {
+  display: inline-block;
+  background: linear-gradient(90deg, #c8a8e9, #f4d03f, #ffdce2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+body.sobre-page .sobre-etereo .text-block {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+body.sobre-page .sobre-etereo .text-block p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  line-height: 1.9;
+  letter-spacing: 0.2px;
+}
+
+body.sobre-page .sobre-etereo .text-block p.final-portal {
+  text-align: center;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+/* Desktop grande (≥ 1280px) */
+@media (min-width: 1280px) {
+  section {
+    max-width: 1320px;
+  }
+  .cards {
+    gap: 2rem;
+  }
+  .card {
+    max-width: 380px;
+  }
+  .card img {
+    height: 220px;
+  }
+  .hero {
+    min-height: 92vh;
+  }
+}
+
+/* Laptops (1025–1279px) */
+@media (max-width: 1279px) and (min-width: 1025px) {
+  .cards {
+    gap: 1.5rem;
+  }
+  .card {
+    flex: 1 1 300px;
+  }
+  .card img {
+    height: 200px;
+  }
+}
+
+/* Tablet landscape (≤ 1024px) */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 0.75rem 1rem;
+  }
+  .hero {
+    min-height: 86vh;
+    padding: 2rem 0;
+  }
+  .hero p {
+    max-width: 640px;
+  }
+  .content-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Tablet (≤ 900px) */
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .cards {
+    justify-content: center;
+  }
+  .card {
+    max-width: 420px;
+  }
+  .card img {
+    height: 200px;
+  }
+  .card {
+    min-height: 520px;
+  }
+}
+
+/* Tablet/phone grande (≤ 800px) */
+@media (max-width: 800px) {
+  section {
+    padding: 3.2rem 1rem;
+  }
+  .hero p {
+    padding: 0 0.25rem;
+  }
+  #depoimentos .cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Tablet vertical (≤ 768px) */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(33, 31, 57, 0.98);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.open {
+    max-height: 500px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a {
+    padding: 1rem 0;
+    color: var(--text-primary);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 78vh;
+  }
+  .hero h1 {
+    letter-spacing: 0.2px;
+  }
+  .section-card {
+    padding: 2.2rem 1.2rem;
+  }
+  .card-content {
+    padding: 1.6rem;
+  }
+  .form-section {
+    padding: 2.2rem 1rem;
+  }
+  .social-proof .spotify-embed iframe,
+  .spotify-sample .spotify-embed iframe {
+    height: 152px;
+  }
+}
+
+/* Phones (≤ 600px) */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hero {
+    min-height: 70vh;
+  }
+  .hero .overlay {
+    background: rgba(33, 31, 57, 0.35);
+  }
+  section {
+    padding: 3rem 1rem;
+  }
+  section h2 {
+    font-size: 1.8rem;
+  }
+  .cards {
+    gap: 1rem;
+  }
+  .card {
+    max-width: 100%;
+  }
+  .card img {
+    height: 170px;
+  }
+  #sobre-soul-travel .section-card {
+    padding: 1.6rem 1rem;
+  }
+  #sobre-soul-travel ul {
+    padding-left: 1rem;
+  }
+}
+
+/* Phones pequenos (≤ 480px) */
+@media (max-width: 480px) {
+  #contactModal .modal-content {
+    width: 92%;
+    padding: 1.2rem;
+  }
+  #contactModal .contact-form {
+    padding: 1rem;
+  }
+}
+
+/* Phones muito pequenos (≤ 420px) */
+@media (max-width: 420px) {
+  header .logo img {
+    width: 34px;
+    height: 34px;
+  }
+  .logo span {
+    font-size: 1.25rem;
+  }
+  .nav-links a {
+    font-size: 0.98rem;
+  }
+  .footer-text p {
+    font-size: 0.85rem;
+  }
+  .contact-form {
+    padding: 1.2rem;
+  }
+  body.sobre-page .sobre-etereo .text-block {
+    padding: 0 0.25rem;
+  }
 }
